@@ -1,12 +1,8 @@
-
 from fastapi import Depends, FastAPI
 from typing import Optional
 
 from .dependencies import get_query_token, get_token_header
 from .routes import items, users, customers
-
-from dotenv import load_dotenv
-load_dotenv()
 
 app = FastAPI(dependencies=[Depends(get_query_token)])
 

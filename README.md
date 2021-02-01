@@ -1,14 +1,25 @@
 # FastAPI
 
-Python API that for Custom Cognitive Skills in Azure Search
+Python API using FastAPI
+
+TODO: 
+ - implement GraphQL on top
 
 ---
 
-## Run Locally
-To run locally in debug mode run:
-
-```
+## Setup
+```bash
 cd ./fastapi
 bash ./create_virtualenv.sh
+```
+
+## Debug
+```bash
 uvicorn app.api:app --reload
-```# BasicFastAPI
+```
+
+
+## Test
+```bash
+python -m pytest
+```
