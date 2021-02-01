@@ -6,6 +6,9 @@ from pydantic import BaseModel, Schema
 
 
 class BasicItem(BaseModel):
+    """
+    New User Record Model
+    """
     name: str
     description: Optional[str] = None
     price: float
@@ -13,6 +16,9 @@ class BasicItem(BaseModel):
 
 
 class Item(BaseModel):
+    """
+    New User Record Model
+    """
     name: str
     description: Optional[str] = None
     price: float
