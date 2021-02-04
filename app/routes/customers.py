@@ -5,7 +5,7 @@ from ..services.customers_service import create_customers as create_customer_rec
 router = APIRouter()
 
 
-@router.get("/", tags=["customer"])
+@router.get("/")
 async def list_customers():
     """
     Lists all of the customer records in FaunaDB 
@@ -14,7 +14,7 @@ async def list_customers():
     return response
 
 
-@router.get("/{customer_id}", tags=["customer"])
+@router.get("/{customer_id}")
 async def get_customers_by_id(customer_id: str):
     """
     Gets a customer record by it's ref ID 
@@ -22,7 +22,7 @@ async def get_customers_by_id(customer_id: str):
     return get_customers_by_ref_id(customer_id)
 
 
-@router.post("/", tags=["customer"], response_model=Customer)
+@router.post("/", response_model=Customer)
 async def create_customers(new_customer: NewCustomer):
     """
     Create a customer record 
@@ -30,7 +30,7 @@ async def create_customers(new_customer: NewCustomer):
     return create_customer_record(dict(new_customer))
 
 
-@router.put("/{customer_id}", tags=["customer"], response_model=Customer)
+@router.put("/{customer_id}", response_model=Customer)
 async def update_customer(customer_id: str, customer: Customer):
     """
     Update a customer record
